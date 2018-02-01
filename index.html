@@ -40,7 +40,46 @@
         <![endif]-->	    
     </head>
 	
-    <body>
+    <body class="homepage" data-spy="scroll" data-target="#nav">
+  <div id="wrapper">
+    <header id="header" data-spy="affix" data-offset-top="0" data-offset-bottom="0">
+      <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <a class="navbar-brand change-color" href="#">
+              <picture class="white-logo">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="images/logo-white-small.png, images/logo-white-small-2x.png 2x" media="(max-width: 767px)">
+                <source srcset="images/logo-large-white.png">
+                <!--[if IE 9]></video><![endif]-->
+                <img src="images/logo-large-white.png" alt="everclear">
+              </picture>
+              <picture class="black-logo">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="images/logo-dark-small.png, images/logo-dark-small-2x.png 2x" media="(max-width: 767px)">
+                <source srcset="images/logo-large-dark.png">
+                <!--[if IE 9]></video><![endif]-->
+                <img src="images/logo-large-dark.png" alt="Feel">
+              </picture>
+             </a>
+          </div>
+          <a class="nav-opener change-color" href="#"><span></span></a>
+          <nav id="nav">
+            <div class="nav-container">
+              <a class="nav-opener" href="#"><span></span></a>
+              <div class="nav-holder">
+                <ul class="nav navbar-nav">
+                  <li><a href="#What-we-do">Who</a></li>
+                  <li><a href="#How-we-do-it">How </a></li>
+                  <li><a href="whatwedo.html">What</a></li>
+                  <li><a href="#Let’s-talk">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </nav>
+      </div>
+    </header>
 	        <!-- CANVAS -->    
 		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
 		
