@@ -37,55 +37,39 @@
 		<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
 		
 	    	<!-- TEXT -->
-	        <div id="container">
+	        <div class="container">
  	        <div id="info">
-	           
-                     <h1 id="myText"> EVERCLEAR </h1> 
-		     <p>Your business processes are a reflection of your organisation's drive and ability to serve your customers. You spend considerable time and resources to continually refine and update your processes - and you want to realise benefits from your efforts.</p>
-			
-                      <p>You can not be all things to all customers. One technological solution can not operationalise every single aspect of your business processes. As such, you require best of breed technological solutions to complement your business processes. Having the flexibility to choose between open source and proprietary systems, or even cloud, hybrid or on-premise solutions, becomes a must have option.</p>
-			
-<p>everclear helps you select viable solutions and then we configure them to work in harmony. A well designed solution architecture is one in which integrated solutions accurately mirror business processes. A well designed enterprise architecture is one where the solution architecture complements your corporate strategy or vision.</p>
-			
-<p>Poor alignment between your processes and suite of solutions may derail your corporate vision and result in lost revenue from cancelled orders, misrouted payments and disgruntled customers. A badly implemented go-to market strategy, based on chaotic underlying processes and spaghetti like integration may undermine your credibility with customers and investors, alike.</p>
-
-<p>We know that cash is king. We understand how expensive a task it can be to attract and win customers. The right business processes can help you find a scaleable way to acquire customers, and then monetize those customers at a significantly higher level than your cost of acquisition.</p> 	
+                <h1 id="myText"> EVERCLEAR </h1> 
+		<p>Your business processes are a reflection of your organisation's drive and ability to serve your customers. You spend considerable time and resources to continually refine and update your processes - and you want to realise benefits from your efforts.</p>
+		<p>You can not be all things to all customers. One technological solution can not operationalise every single aspect of your business processes. As such, you require best of breed technological solutions to complement your business processes. Having the flexibility to choose between open source and proprietary systems, or even cloud, hybrid or on-premise solutions, becomes a must have option.</p>
+		<p>everclear helps you select viable solutions and then we configure them to work in harmony. A well designed solution architecture is one in which integrated solutions accurately mirror business processes. A well designed enterprise architecture is one where the solution architecture complements your corporate strategy or vision.</p>
+		<p>Poor alignment between your processes and suite of solutions may derail your corporate vision and result in lost revenue from cancelled orders, misrouted payments and disgruntled customers. A badly implemented go-to market strategy, based on chaotic underlying processes and spaghetti like integration may undermine your credibility with customers and investors, alike.</p>
+		<p>We know that cash is king. We understand how expensive a task it can be to attract and win customers. The right business processes can help you find a scaleable way to acquire customers, and then monetize those customers at a significantly higher level than your cost of acquisition.</p> 	
 	        </div> 
 		</div>
       
 	        <!-- SCRIPT -->    
-		<script id="vs" type="x-shader/vertex"> 
- 
-			attribute vec3 position;
- 
-			void main() {
- 
-				gl_Position = vec4( position, 1.0 );
- 
-			}
- 
+		<script id="vs" type="x-shader/vertex">  
+			attribute vec3 position; 
+			void main() { 
+				gl_Position = vec4( position, 1.0 ); 
+			} 
 		</script> 
  
-		<script id="fs" type="x-shader/fragment"> 
- 
+		<script id="fs" type="x-shader/fragment">  
 			uniform float time;
 			uniform vec2 resolution;
  
-			void main( void ) {
- 
+			void main( void ) { 
 				vec2 position = - 1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
 				float red = abs( sin( position.x * position.y + time / 5.0 ) );
 				float green = abs( sin( position.x * position.y + time / 4.0 ) );
 				float blue = abs( sin( position.x * position.y + time / 3.0 ) );
-				gl_FragColor = vec4( red, green, blue, 1.0 );
- 
-			}
- 
+				gl_FragColor = vec4( red, green, blue, 1.0 ); 
+			} 
 		</script> 
  
-		<script> 
-	
-			
+		<script> 			
 			/**
 			 * Provides requestAnimationFrame in a cross browser way.
 			 * paulirish.com/2011/requestanimationframe-for-smart-animating/
