@@ -9,45 +9,42 @@
 <!-- stylesheets -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">	   
-<!-- scripts -->
-<link rel="icon" type="image/x-icon" href="https://feel.com.au/favicon.ico" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <script type="text/javascript" src="https://cdn.rawgit.com/Chalarangelo/bootstrap-extend/880420ae663f7c539971ded33411cdecffcc2134/js/bootstrap-extend.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/bootstrap-extend/880420ae663f7c539971ded33411cdecffcc2134/css/bootstrap-extend.min.css"/>
-  <link rel="stylesheet" href="css/main.css">
-  <script type="text/javascript" src="js/three.min.js" defer></script>
-  <script type="text/javascript" src="js/detector.js" defer></script>
-  <script id="vs" type="x-shader/x-vertex" defer>
+<!-- css scripts -->
+	<link rel="icon" type="image/x-icon" href="https://feel.com.au/favicon.ico" />
+  	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script type="text/javascript" src="https://cdn.rawgit.com/Chalarangelo/bootstrap-extend/880420ae663f7c539971ded33411cdecffcc2134/js/bootstrap-extend.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/bootstrap-extend/880420ae663f7c539971ded33411cdecffcc2134/css/bootstrap-extend.min.css"/>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" defer></script>
+        <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
+        <script src="js/jquery.main.js" defer></script>
+	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript" src="js/three.min.js" defer></script>
+	<script type="text/javascript" src="js/detector.js" defer></script>
+<!-- webgl scripts -->  
+   <script id="vs" type="x-shader/x-vertex" defer>
     varying vec2 vUv;
     void main() {
       vUv = uv;
       gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
     }
   </script>
-
   <script id="fs" type="x-shader/x-fragment" defer>
     uniform sampler2D map;
     uniform vec3 fogColor;
     uniform float fogNear;
     uniform float fogFar;
-
     varying vec2 vUv;
     void main() {
-
       float depth = gl_FragCoord.z / gl_FragCoord.w;
       float fogFactor = smoothstep( fogNear, fogFar, depth );
-
       gl_FragColor = texture2D( map, vUv );
       gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
       gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
     }
-  </script>
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" defer></script>
-  <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
-  <script src="js/jquery.main.js" defer></script>	    
+  </script>	    
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
@@ -55,9 +52,6 @@
             gtag('config', 'UA-61844521 -1');
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
-
-
 <!--STYLES -->	    
         <style> 
 	html, body {
